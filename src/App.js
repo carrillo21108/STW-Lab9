@@ -22,7 +22,7 @@ class App extends Component {
     render(){
         return (
             <div className="App">
-                <Display value={this.state.siguiente || this.state.total || "0"}/>
+                <Display value={this.state.siguiente}/>
                 <Panel clickHandle={this.handleClick}/>
             </div>
         )

@@ -3,7 +3,7 @@ import operate from './operadores'
 import isNumber from './isNumber'
 
 export default function operaciones(estado,nombreDeBoton){
-    if(nombreDeBoton === "AC"){
+    if(nombreDeBoton === "C"){
         return{
             total:null,
             siguiente:'0',
@@ -46,6 +46,12 @@ export default function operaciones(estado,nombreDeBoton){
     }
 
     if(nombreDeBoton === "."){
+        if(estado.operador){
+            if(estado.siguiente.includes(".")) return{}
+
+            if(!estado.seleccion) return {siguiente:"0.",seleccion:true}
+        }
+
         if(estado.siguiente.includes(".")) return{}
 
         return {siguiente:estado.siguiente+"."}
